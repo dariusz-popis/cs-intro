@@ -1,37 +1,33 @@
 ﻿using Day01.Library.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Day01.Library
 {
     public class Switch
     {
         private readonly uint _maxSwitches;
-        private uint _switchCount = 0;
         private Switch3Keys _switchState = Switch3Keys.Off;
 
+        public uint SwitchCount { get; private set; } = 0;
         public Switch(uint maxSwitches)
         {
             _maxSwitches = maxSwitches;
         }
 
-        public void SwitchKey(Switch3Keys switch3Keys)
+        public Switch3Keys SwitchState
         {
-            if (++_switchCount > _maxSwitches)
+            set
             {
-                throw new TechnicalException(Errors.MaxSwitchesReached);
+                if (++SwitchCount > _maxSwitches)
+                {
+                    throw new TechnicalException(Errors.MaxSwitchesReached);
+                }
+
+                _switchState = value;
             }
-
-            _switchState = switch3Keys;
+            get
+            {
+                return _switchState;
+            }
         }
-
-        public Switch3Keys GetSwitchState() => _switchState;
-        //public Switch3Keys GetSwitchState()
-        //{
-        //    return _switchState;
-        //}
     }
 }
