@@ -51,11 +51,18 @@
   <ItemGroup>
     <Compile Include="SwitchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PainterTest.cs" />
+    <Compile Include="ReflectionDemo.cs" />
+    <Compile Include="WorkerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Day01.Contracts\Day01.Contracts.csproj">
+      <Project>{f5c66359-7f82-4af3-965c-82f7464307a0}</Project>
+      <Name>Day01.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Day01.Library\Day01.Library.csproj">
       <Project>{5c1b432f-8f5d-427e-982b-f4962ff888c6}</Project>
       <Name>Day01.Library</Name>
