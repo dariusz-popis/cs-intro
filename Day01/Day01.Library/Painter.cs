@@ -10,7 +10,7 @@ namespace Day01.Library
 
     internal class Painter : Worker
     {
-        public Painter() : base("Unnamed Painter") { }
+        public Painter(string name = "Unnamed Painter") : base(name) { }
 
         //public TimesPaintingCounting OnPaintStarting;
         public Func<object, decimal, uint> OnPaintStarting;
