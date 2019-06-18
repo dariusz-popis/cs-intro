@@ -29,7 +29,6 @@ namespace Day01.Library.Tests
         }
     }
 
-    //TODO: Atrybuty
     //TODO: Asynchroniczność
     //TODO: Generyki
 
