@@ -44,6 +44,7 @@
     <Compile Include="Common\Errors.cs" />
     <Compile Include="Common\InternalsVisibleTo.cs" />
     <Compile Include="Common\TechnicalException.cs" />
+    <Compile Include="CycleProvider.cs" />
     <Compile Include="NINValidators.cs" />
     <Compile Include="Painter.cs" />
     <Compile Include="Person.cs" />
