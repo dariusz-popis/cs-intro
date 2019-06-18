@@ -17,7 +17,7 @@ namespace Day01.Library.Tests
         {
             var worker = new Worker("Slavko");
 
-            worker.WorkerMobilePhone += (s, t) => Console.WriteLine($"--------\nSender is: {s}\nMessage:\n{t}\n---------");
+            worker.WorkerMobilePhone += (s, arg) => Console.WriteLine($"--------\nSender is: {s}\nMessage:\n{arg.Message}\n---------");
             //worker.workerMobilePhone.Invoke(worker, "You are one of the top devs");
 
             //worker.DoWork("A1");

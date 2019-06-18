@@ -1,20 +1,17 @@
 ﻿using Day01.Contracts;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Day01.Library
 {
-    public class CycleProvider : ICycleProvider
+    public class CycleProvider<T> : ICycleProvider<T>
     {
         private int _currentItem = -1;
-        private List<object> _items = new List<object>();
+        private List<T> _items = new List<T>();
 
-        public object CurrentItem => ValidateItemsCount()._items[_currentItem];
+        public T CurrentItem => ValidateItemsCount()._items[_currentItem];
 
-        public void Add(object item)
+        public ICycleProvider<T> Add(T item)
         {
             if (_items.Count == 0)
             {
@@ -22,9 +19,10 @@ namespace Day01.Library
             }
 
             _items.Add(item);
+            return this;
         }
 
-        public object Next()
+        public T Next()
         {
             ValidateItemsCount();
 
@@ -32,7 +30,7 @@ namespace Day01.Library
             return _items[_currentItem];
         }
 
-        private CycleProvider ValidateItemsCount()
+        private CycleProvider<T> ValidateItemsCount()
         {
             if (_items.Count == 0)
             {

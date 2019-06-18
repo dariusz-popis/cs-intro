@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F5C66359-7F82-4AF3-965C-82F7464307A0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Day01.Contracts</RootNamespace>
-    <AssemblyName>Day01.Contracts</AssemblyName>
+    <ProjectGuid>{6E33B41F-CFE4-4494-9BD4-14CAA0D2FFCB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Day01.ConsoleApp</RootNamespace>
+    <AssemblyName>Day01.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,9 +22,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Day01.Contracts.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,24 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICycleProvider.cs" />
-    <Compile Include="IPeselPersonalData.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sex.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ImportantUrls.js">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ImportantUrls.tt</DependentUpon>
-    </Content>
-    <Content Include="ImportantUrls.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ImportantUrls.js</LastGenOutput>
-    </Content>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\Day01.Contracts\Day01.Contracts.csproj">
+      <Project>{f5c66359-7f82-4af3-965c-82f7464307a0}</Project>
+      <Name>Day01.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Day01.Library\Day01.Library.csproj">
+      <Project>{5c1b432f-8f5d-427e-982b-f4962ff888c6}</Project>
+      <Name>Day01.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

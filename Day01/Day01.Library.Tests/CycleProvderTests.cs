@@ -11,12 +11,8 @@ namespace Day01.Library.Tests
         [TestMethod]
         public void Add_OneItem_CurrentItemIsAddedItem()
         {
-            ICycleProvider iCycleProvider = new CycleProvider();
+            ICycleProvider<string> iCycleProvider = new CycleProvider<string>();
             const string testedItem = "Tested Item";
-
-            //var mockProvider = new Mock<ICycleProvider>();
-            //mockProvider.SetupGet(x=>x.CurrentItem).Returns(testedItem);
-            //iCycleProvider = mockProvider.Object;
 
             iCycleProvider.Add(testedItem);
 
@@ -28,7 +24,7 @@ namespace Day01.Library.Tests
         [TestMethod]
         public void Next_Added3Items_AppropriateItemsAreReturned()
         {
-            ICycleProvider iCycleProvider = new CycleProvider();
+            ICycleProvider<string> iCycleProvider = new CycleProvider<string>();
             const string testedItem1 = "Tested Item 1";
             const string testedItem2 = "Tested Item 2";
             const string testedItem3 = "Tested Item 3";

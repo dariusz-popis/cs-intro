@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Day01.Contracts
 {
-    public interface ICycleProvider
+    public interface ICycleProvider<T> //where TClass : class
     {
-        object CurrentItem { get; }
-        object Next();
-        void Add(object item);
+        T CurrentItem { get; }
+        T Next();
+        ICycleProvider<T> Add(T item);
     }
 }
 #pragma warning restore CS1591

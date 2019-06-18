@@ -3,11 +3,15 @@
 namespace Day01.Library
 {
     //internal delegate void SendingSms(object sender, string message);
-
+    internal class WorkerEventArgs : EventArgs
+    {
+        public string Message { get; set; }
+        public byte[] Picture { get; set; }
+    }
     internal class Worker
     {
         //public event SendingSms WorkerMobilePhone;
-        public event Action<object,string> WorkerMobilePhone;
+        public event Action<object, WorkerEventArgs> WorkerMobilePhone;
 
         public string Name { get; }
 
@@ -28,7 +32,7 @@ namespace Day01.Library
             //if(workerMobilePhone!=null) workerMobilePhone.Invoke(this, $"{subject} done at: {DateTime.Now}");
             //if(workerMobilePhone!=null) workerMobilePhone(this, $"{subject} done at: {DateTime.Now}");
 
-            WorkerMobilePhone?.Invoke(this, $"{subject} done at: {DateTime.Now}");
+            WorkerMobilePhone?.Invoke(this, new WorkerEventArgs() { Message = $"{subject} done at: {DateTime.Now}" });
         }
 
         public override string ToString()
